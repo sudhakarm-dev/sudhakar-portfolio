@@ -23,22 +23,20 @@ menu.onclick = ()=>{
     }
 }
 
-// this function is used for moving the navbar or hide up and revel when scroll down
+// this function is used for the navbar to hide when scroll down
 const navbar = document.getElementById("navbar"); 
 window.addEventListener('wheel', (event) => {
     if (event.deltaY > 0) {
         navbar.style.top = "-80px";
+        if (window.innerWidth < 768) {
+            nav.classList.remove("active");
+        }
 
     } else if (event.deltaY < 0) {
         navbar.style.top = "10px";
+        bar1.style.display = "block";
+        bar2.style.transform = "rotate(0deg)";
+        bar3.style.transform = "translateY(0px) rotate(0deg)";
         // console.log('Scrolling up');
     }
 });
-
-// to show all career options 
-const  dnArrow = document.getElementById("dnArrow");
-const careerList = document.getElementById("careerList");
-
-dnArrow.onclick = ()=>{
-    careerList.classList.toggle("active");
-}
