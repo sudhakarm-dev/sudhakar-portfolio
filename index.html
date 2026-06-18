@@ -4,33 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index-animate.css">
     <title>Sudhakar M </title>
 </head>
-<body>
-    <div class="navbar">
+<body id="body">
+    <div class="navbar" id="navbar">
         <span class="devName">
-            <h1>M Sudhakar</h1>
+            <h1>O1Dev</h1>
         </span>
-        <nav>
+        <nav id="nav">
             <ul class="navlinks">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li id="careerList" class="careerList">
+                    <p id="dnArrow">&#8964;</p>
+                    <div class="career-box">
+                        <ul>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#experience">Experience</a></li>                          <li><a href="#internship">Internships</a></li>
+                        </ul>    
+                    </div>
+                </li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="./pages/learn.html">Learn</a></li>
                 <li><a href="#aboutme">About Me</a></li>
                 <li><a href="#contactme">Contact Me</a></li>
             </ul>
         </nav>
-        <div class="menu">
-            <div class="menubar"></div>
-            <div class="menubar"></div>
-            <div class="menubar"></div>
+        <div class="menu" id="menu">
+            <div class="menubar" id="bar1"></div>
+            <div class="menubar" id="bar2" style="transform: rotateX(45deg);"></div>
+            <div class="menubar" id="bar3" style="transform: rotateY(45deg);"></div>
         </div>
     </div>
 
-    <section>
-        <div class="content"></div>
-        <div class="image"></div>
-    </section>
+    <div class="home" id="home">
+        <section class="cont-sec">
+            <span>
+                <h1>I am A </h1>
+            </span>
+        </section>
+        <section class="img-sec">
+
+        </section>
+    </div>
+
+    <div class="experience" id="experience">
+        <h1>Experience</h1>
+        <h2>Worked with...</h2>
+        <span class="career-card">
+            
+        </span>
+    </div>
+
+    <div class="skills" id="skills">
+        <span class="heading-1">
+            <h1>Skills</h1>
+        </span>
+        <div class="skill-boxs">
+            <span class="skill-box">
+                    <img src="./icons/100*100/icons8-c-programming-100.png" alt="">
+            </span>
+            <span class="skill-box">
+                <img src="./icons/100*100/icons8-java-100.png" alt="">
+            </span>
+            <span class="skill-box">
+                <img src="./icons/100*100/icons8-python-100.png" alt="">
+            </span>
+            <span class="skill-box">
+                <img src="./icons/100*100/icons8-sql-100.png" alt="">
+            </span>
+            <span class="skill-box">
+                <img src="./icons/100*100/icons8-javascript-100.png" alt="">
+            </span>
+            <span class="skill-box">
+                <img src="./icons/100*100/icons8-html-5-100.png" alt="">
+            </span>
+            <span class="skill-box">
+                <img src="./icons/100*100/icons8-css-100.png" alt="">
+            </span>
+        </div>
+    </div>
+
+    <div class="projects" id="projects"></div>
+    <div class="aboutme" id="aboutme"></div>
+    <div class="contactme" id="contactme"></div>
+    <script src="./JS/utils.js"></script>
 </body>
 </html>

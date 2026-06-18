@@ -1,7 +1,8 @@
 :root{
-    --navbar-primary-bg: #08126b;
+    --navbar-primary-bg: #091feb;
     --nav-secondary-bg: #f6f6f6;
     --nav-text-color: #f6f6f6;
+    --primary-bg: #0e21ca;
 }
 *{
     margin: 0;
@@ -9,17 +10,28 @@
     list-style-type: none;
     text-decoration: none;
 }
+span{
+    display: block;
+}
+
+/* navbar */
 .navbar{
     background-color: var(--navbar-primary-bg);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 70px;
-    width: 100%;
     position: fixed;
     top: 10px;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 10px;
+    z-index: 10;
+    transition: top 500ms ease;
 }
 .navbar nav{
+    border-radius: 10px;
     background-color: var(--navbar-primary-bg);
     height: 100%;
     width: 100%;
@@ -32,6 +44,47 @@
     align-items: center;
     gap: 5em;
 }
+/* this line design the carrer */
+.navbar nav .navlinks .careerList:nth-child(2){
+    width: 120px;
+    height: 50px;
+    position: relative;
+    overflow-y: hidden;
+    transition: all 500ms ease;
+}
+.navbar nav .navlinks .careerList:nth-child(2).active{
+    overflow-y: visible;
+    max-height: 150px;
+}
+.navbar nav .navlinks .careerList:nth-child(2) #dnArrow{
+    position: absolute;
+    right: 8px;
+    top: 4px;
+    font-size: 24px;
+    color: white;
+    z-index: 10;
+    cursor: pointer;
+}
+.navbar nav .navlinks .careerList:nth-child(2) .career-box ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--navbar-primary-bg);
+}
+.navbar nav .navlinks .careerList:nth-child(2) .career-box ul li{
+    height: 100%;
+    width: 100%;
+    flex-basis: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
 .navbar nav .navlinks li a{
     color: var(--nav-text-color);
 }
@@ -40,8 +93,11 @@
 .navbar nav .navlinks li a:active {
     color: var(--nav-text-color);
 }
-.navbar nav .navlinks li a:hover{
-    text-shadow: 5px 5px 15px white;
+.navbar nav .navlinks #closeBtn{
+    font-size: 22px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 .navbar .devName,.menu{
     display: none;
@@ -49,22 +105,28 @@
 @media only screen and (max-width: 920px){
     .navbar{
         flex-wrap: wrap;
-        z-index: 10;
     }
     .navbar .devName{
         display: block;
         text-indent: 30px;
-        width: 90%;
+        width: 80%;
         order: 1;
         color: var(--nav-text-color);
     }
+    .navbar .devName h1{
+        font-weight: 600;
+        font-size: 22px;
+    }
     .navbar nav{
-        width: 40%;
+        width: 70%;
         order: 3;
         height: max-content;
         position: absolute;
-        right: 10px;
+        left: 120%;
         top: 80px;
+    }
+    .navbar nav.active{
+        left: 30%;
     }
     .navbar nav .navlinks{
         flex-direction: column;
@@ -73,10 +135,14 @@
     .navbar nav .navlinks{
         padding: 15px 0px;
     }
+    .navbar nav .navlinks .careerList:nth-child(2).active{
+    overflow-y: visible;
+    height: auto;
+}
     .navbar .menu{
         order: 2;
         height: 60px;
-        width: 10%;
+        width: 20%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -89,5 +155,98 @@
         width: 30px;
         border-radius: 5px;
         background-color: white;
+        transition: all 600ms ease;
+    }
+}
+
+/* home */
+.home{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+.home .cont-sec{
+    height: 100%;
+    width: 50%;
+    position: relative;
+    background-color: red;
+}
+.home .cont-sec span{
+    position: absolute;
+    top:50%;
+}
+.home .cont-sec span:nth-child(1) h1{
+    height: 40px;
+    width: fit-content;
+}
+.home .img-sec{
+    height: 100%;
+    width: 50%;
+    background-color: blue;
+}
+@media only screen and (max-width: 768px){
+    .home{
+        flex-direction: column;
+    }
+    .home .cont-sec{
+        width: 100%;
+        height: 40%;
+    }
+    .home .cont-sec span{
+
+    }
+    .home .img-sec{
+        width: 100%;
+        height: 60%;
+    }
+}
+
+
+.experience{
+    min-height: 30vh;
+    height: fit-content;
+    width: 100%;
+    background-color: red;
+}
+/* skills */
+.skills{
+    min-height: 70vh;
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.skills .heading-1{
+    width: 100%;
+    height: 80px;
+    display: grid;
+    place-content: center;
+}
+.skills .skill-boxs{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.skills .skill-boxs .skill-box{
+    height: 120px;
+    width: 120px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media only screen and (max-width:870px){
+    .skills .skill-boxs .skill-box:nth-child(1){
+        margin-top: 40px;
+    }
+     .skills .skill-boxs .skill-box:last-of-type{
+        margin-bottom: 40px;
     }
 }
