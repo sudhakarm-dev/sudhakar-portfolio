@@ -40,3 +40,11 @@ window.addEventListener('wheel', (event) => {
         // console.log('Scrolling up');
     }
 });
+
+// to maximize and minimize the experience section card's
+const downAngle = document.querySelectorAll(".fa-angle-down");
+downAngle.forEach(angle => {
+    angle.addEventListener("click", () => {
+        angle.closest(".card").classList.toggle("active");
+    });
+});
