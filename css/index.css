@@ -9,6 +9,7 @@
     padding: 0;
     list-style-type: none;
     text-decoration: none;
+    box-sizing: border-box;
 }
 span{
     display: block;
@@ -51,7 +52,7 @@ span{
     display: none;
 }
 
-@media only screen and (max-width: 920px){
+@media only screen and (max-width: 900px){
     .navbar{
         width: 85%;
     }
@@ -150,6 +151,7 @@ span{
 }
 .home .cont-sec .contentbox2 p span{
     position: relative;
+    width: 20ch;
 }
 .home .cont-sec .contentbox2 p span::before{
     color: #dd4811;
@@ -164,7 +166,7 @@ span{
     background-color: white;
     border-left: 2px solid #dd4811;
     right: -8px;
-    animation: cursor 800ms infinite, typing 20s steps(14) infinite;
+    animation: cursor 800ms infinite, typing 20s steps(20) infinite;
     transition: all 400ms;
 }
 @keyframes cursor {
@@ -226,7 +228,7 @@ span{
 /* Experience */
 .experience{
     min-height: 50vh;
-    height: fit-content;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -237,7 +239,6 @@ span{
     height: 60px;
     width: 100%;
     text-align: center;
-    padding-top: 30px;
     margin: 40px;
 }
 .experience .career-card{
@@ -247,49 +248,75 @@ span{
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    gap: 2rem;
     margin-bottom: 20px;
     overflow-y: hidden;
+    gap: 1rem;
 }
 .experience .career-card .card{
     border: 1px dotted black;
-    background:#fff;
-    padding:25px;
+    background:#b9b9b9;
     border-radius:12px;
-    box-shadow:0px 4px 15px rgba(0,0,0,.1);
+    box-shadow:0px 4px 15px rgba(0,0,0,.7);
     min-width:250px;
     width: 360px;
     height: 280px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
 }
 .experience .career-card .card .header{
+    height: 30%;
+    width: 100%;
     display:flex;
     justify-content:space-between;
     flex-wrap:wrap;
-    margin-bottom:10px;
+    gap: 5px;
 }
-.experience .career-card .card .duration {
+.experience .career-card .card .header h2,
+.experience .career-card .card .header h3{
+    height: 30%;
+    font-size: 16px;
+    width: 100%;
+}
+.experience .career-card .card .duration{
+    height: 40%;
+    width: 100%;
     display: flex;
-    gap: 1rem;
+}
+.experience .career-card .card .duration span:nth-child(1){
+    width: 65%;
+}
+.experience .career-card .card .duration span:nth-child(2){
+    width: 35%;
+}
+.experience .career-card .card .duration p{
+    height: 100%;
 }
 .experience .career-card .card .duration span:first-child{
     font-weight:600;
     color:#333;
 }
 .experience .career-card .card .details{
+    height: 15%;
+    width: 100%;
     display:flex;
-    gap:30px;
-    margin:15px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
-.experience .career-card .card .highlight{
-    color:#d33737;
-    font-weight:700;
+.experience .career-card .card .details div{
+    width: 50%;
+    display: flex;
 }
-.experience .career-card .card .gtech{
-    color:#2563eb;
-    font-weight:600;
+.experience .career-card .card .details div strong,
+.experience .career-card .card .details div span,
+.experience .career-card .card .details div p{
+    height: 100%;
 }
-.experience .career-card .card p{
-    display: inline;
+.experience .career-card .card .info{
+    height: max-content;
+    width: 100%;
     text-align: justify;
 }
 @media only screen and (max-width: 630px){
@@ -297,12 +324,15 @@ span{
         height: 80px;
         padding-top: 0;
     }
+    .experience .career-card{
+        gap: 1rem;
+    }
     .experience .career-card .card{
         background:#fff;
         padding:25px;
         border-radius:12px;
         box-shadow:0 4px 15px rgba(0,0,0,.1);
-        width:250px;
+        width:80%;
         min-height: 280px;
         height: auto;
 }
@@ -355,3 +385,189 @@ span{
     }
 }
 
+.aboutme{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aboutme .abme-container{
+    height: 100%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100px 40px 160px 150px 340px;
+    grid-template-areas: 
+    "details img"
+    "moto img"
+    "self-intro img"
+    "interest img"
+    "education img";
+    place-items: center;
+}
+.aboutme .abme-container .moto{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.aboutme .abme-container .moto ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    font-weight: 600;
+    font-size: 24px;
+}
+.aboutme .abme-container .moto ul li{
+    width: fit-content;
+}
+.aboutme .abme-container .details{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.aboutme .abme-container .details h1{
+    height: 100%;
+}
+.aboutme .abme-container .self-intro{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.aboutme .abme-container .self-intro p{
+    text-indent: 20px;
+    padding-top: 20px;
+    width: 100%;
+    text-align: justify;
+}
+.aboutme .abme-container .interest{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.aboutme .abme-container .interest h2{
+    width: 100%;
+    height: 30%;
+    text-indent: 20px;
+}
+.aboutme .abme-container .interest ul{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.aboutme .abme-container .interest ul li{
+    margin-left: 160px;
+    list-style-type: disc;
+}
+.aboutme .abme-container .education{
+    height: 100%;
+    width: 100%;
+}
+.aboutme .abme-container .education{
+    height: 100%;
+    width: 100%;
+}
+.aboutme .abme-container .education .card1,.card2{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-indent: 15px;
+}
+.aboutme .abme-container .education .card1 .header,
+.aboutme .abme-container .education .card2 .header{
+    flex: 1 0 0;
+    width: 100%;
+}
+.aboutme .abme-container .education .card1 .duration,
+.aboutme .abme-container .education .card2 .duration{
+    width: 100%;
+    flex: 1 0 0;
+}
+.aboutme .abme-container .education .card1 .result,
+.aboutme .abme-container .education .card2 .result{
+    width: 100%;
+    display: flex;
+    flex: 1 0 0;
+}
+.aboutme .abme-container .education .card1 .result p,
+.aboutme .abme-container .education .card2 .result p{
+    width: 100%;
+}
+
+.aboutme .abme-container .img{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.aboutme .abme-container .img .img-container{
+   height: 300px;
+   width: 300px;
+    border-radius: 50%;
+    background-color: gray;
+}
+@media only screen and (max-width:1026px){
+    .aboutme{
+        height: fit-content;
+    }
+    .aboutme .abme-container{
+        grid-template-columns: 100%;
+        grid-template-rows: 60px 40px 220px 130px 130px 400px;
+        grid-template-areas: 
+        "details"
+        "moto"
+        "img"
+        "self-intro"
+        "interest"
+        "education";
+    }
+    .aboutme .abme-container .img .img-container{
+        padding: 10px;
+        height: 200px;
+        width: 200px;
+    }
+    .aboutme .abme-container .details h1{
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .aboutme .abme-container .moto ul{
+        font-size: 18px;
+    }
+    .aboutme .abme-container .self-intro p{
+        width: 100%;
+        text-wrap: calc(12px, 14px ,18px);
+    }
+}
+@media only screen and (max-width: 760px){
+    .aboutme .abme-container{
+        grid-template-rows: 60px 40px 220px 200px 130px 400px;
+    }
+}
+@media only screen and (max-width: 510px){
+    .aboutme .abme-container{
+        grid-template-rows: 60px 40px 220px 230px 130px 400px;
+    }
+    .aboutme .abme-container .education .card1 .header :is(h1 ,h2) ,
+    .aboutme .abme-container .education .card2 .header :is(h1, h2){
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+}
+
+.contactme{
+    height: 100vh;
+    width: 100%;
+}
